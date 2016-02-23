@@ -14,7 +14,7 @@ var codeViewer = {
 	encoded:      "",
 	mustache:     "",
 	css:          "",
-	ids:          { "e": "#sg-code-title-html", "m": "#sg-code-title-mustache", "c": "#sg-code-title-css" },
+	ids:          { "e": "#sg-code-title-html", "m": "#sg-code-title-mustache", "c": "#sg-code-title-css" , "j": "#sg-code-title-json" },
 	targetOrigin: (window.location.protocol === "file:") ? "*" : window.location.protocol+"//"+window.location.host,
 	copyOnInit:   false,
 	
@@ -138,6 +138,9 @@ var codeViewer = {
 		$(codeViewer.ids["c"]).click(function() {
 			codeViewer.swapCode("c");
 		});
+		$(codeViewer.ids["j"]).click(function() {
+			codeViewer.swapCode("j");
+		});
 		
 	},
 	
@@ -156,6 +159,8 @@ var codeViewer = {
 			fill = codeViewer.encoded;
 		} else if (type == "c") {
 			fill = codeViewer.css;
+		} else if (type == "j") {
+			fill = codeViewer.json;
 		}
 		$("#sg-code-fill").html(fill).text();
 		codeViewer.tabActive = type;
@@ -216,6 +221,12 @@ var codeViewer = {
 		codeViewer.mustache = this.responseText;
 		if (codeViewer.tabActive == "m") {
 			codeViewer.activateDefaultTab("m",this.responseText);
+		}
+	},
+	saveJSON: function() {
+		codeViewer.json = this.responseText;
+		if (codeViewer.tabActive == "j") {
+			codeViewer.activateDefaultTab("j",this.responseText);
 		}
 	},
 	
@@ -326,6 +337,11 @@ var codeViewer = {
 		m.onload = this.saveMustache;
 		m.open("GET", fileName.replace(/\.html/,".mustache") + "?" + (new Date()).getTime(), true);
 		m.send();
+		
+		var j = new XMLHttpRequest();
+		j.onload = this.saveJSON;
+		j.open("GET", fileName.replace(/\.html/,".json") + "?" + (new Date()).getTime(), true);
+		j.send();
 		
 		// if css is enabled request the css for the pattern
 		if (cssEnabled) {
