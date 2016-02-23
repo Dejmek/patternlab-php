@@ -62,7 +62,9 @@ class Builder {
 		}
 
 		// set-up the source & public dirs
-		$this->sp = "/../../../source/_patterns" . DIRECTORY_SEPARATOR;
+		if (!isset($config['sp'])) {
+			$this->sp = "/../../../source/_patterns" . DIRECTORY_SEPARATOR;
+		}
 		$this->pp = "/../../../public/patterns" . DIRECTORY_SEPARATOR;
 		$this->sd = __DIR__ . "/../../../source";
 		$this->pd = __DIR__ . "/../../../public";
