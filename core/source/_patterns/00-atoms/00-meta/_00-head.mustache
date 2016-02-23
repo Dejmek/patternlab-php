@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html class="{{ htmlClass }}">
-	<head>
+	<head>		
 		<title>{{ title }}</title>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width" />
-		
-		<link rel="stylesheet" href="../../css/style.css?{{ cacheBuster }}" media="all" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta http-equiv="cleartype" content="on">
 
+		<link rel="stylesheet" href="../../css/app.css?{{ cacheBuster }}" media="all" />		
+
+		<script src="../../js/framework.js"></script>
+
+		<link rel="apple-touch-icon" sizes="57x57" href="../../favicons/blue/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="../../favicons/blue/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="../../favicons/blue/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="../../favicons/blue/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="../../favicons/blue/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="../../favicons/blue/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="../../favicons/blue/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="../../favicons/blue/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/blue/apple-touch-icon-180x180.png">
+	
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		
+		<link rel="icon" type="image/png" href="../../favicons/blue/favicon-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="../../favicons/blue/favicon-160x160.png" sizes="160x160">
+		<link rel="icon" type="image/png" href="../../favicons/blue/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="../../favicons/blue/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="../../favicons/blue/favicon-32x32.png" sizes="32x32">	
+		
 		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
 		{% pattern-lab-head %}
 		<!-- End Pattern Lab -->
 	
 	</head>
-	<body class="{{ bodyClass }}">	
-		
+	<body class="patternLabFrame {{ bodyClass }}"><div class="document">
+	<object class="SVGclipFix">
+		<svg version="1.1" baseProfile="tiny" id="avatar-mask" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="0" height="0" viewBox="0 0 80 80" xml:space="preserve"><defs>
+			<clipPath id="globalMask"><path d="M80,40C80,17.909,62.223,0,40.291,0C18.361,0,0.583,17.909,0.583,40 c0,10.81,4.264,20.61,11.18,27.809L0,80h42.424v-0.059C63.363,78.824,80,61.371,80,40z" fill="#ffffff" clipPathUnits="objectBoundingBox"/></clipPath>
+		</defs></svg>
+		<svg version="1.1" baseProfile="tiny" id="avatar-group-mask" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="0" height="0" viewBox="0 0 80 80" xml:space="preserve"><defs>
+			<clipPath id="global-mask-front"><path fill="none" d="M23.532,58.5l7.373-7.642l-1.001-1.041C24.767,44.471,21.938,37.433,21.938,30 c0-15.715,12.687-28.5,28.281-28.5C65.813,1.5,78.5,14.285,78.5,30c0,15.157-11.755,27.657-26.762,28.458L50.955,58.5H23.532z"/></clipPath>
+			<clipPath id="global-mask-back"><path fill="none" d="M3.532,78.5l7.373-7.642l-1.001-1.041C4.767,64.471,1.938,57.433,1.938,50 c0-15.715,12.687-28.5,28.281-28.5S58.5,34.285,58.5,50c0,15.157-11.755,27.657-26.762,28.458L30.954,78.5H3.532z"/></clipPath>
+		</defs></svg>
+	</object>
+	
